@@ -1,0 +1,15 @@
+{
+  "token": "YOUR_BOT_TOKEN",
+  "users": [
+    {
+      "chatid": 1111111,
+      "apikey": "YOUR_APIKEY_FROM_BINANCE",
+      "secretkey": "YOUR_SECRETKEY_FROM_BINANCE"
+    },
+    {
+      "chatid": 2222222,
+      "apikey": "YOUR_APIKEY_FROM_BINANCE",
+      "secretkey": "YOUR_SECRETKEY_FROM_BINANCE"
+    }
+  ]
+}
