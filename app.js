@@ -23,7 +23,7 @@ for (let index in credentialsArryy) {
     .onUserData(
       binanceRest,
       (data) => {
-        SendNotification(data, credentialsArryy[index].chatid)
+        sendNotification(data, credentialsArryy[index].chatid)
       },
       60000
     )
@@ -32,7 +32,7 @@ for (let index in credentialsArryy) {
     })
 }
 
-function SendNotification(data, chatId) {
+function sendNotification(data, chatId) {
   if (data.eventType === 'executionReport') {
     if (data.executionType === 'NEW') {
       status = 'CREATED'

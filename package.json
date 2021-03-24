@@ -4,13 +4,17 @@
   "description": "Telegram notifier for binance orders",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js",
+    "server": "nodemon app.js"
   },
-  "author": "",
+  "author": "Sergey Kutovoy <sergey@kutovoy.dev>",
   "license": "ISC",
   "dependencies": {
     "binance": "^1.3.5",
     "config": "^3.3.6",
     "slimbot": "^5.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
   }
 }
