@@ -1,0 +1,17 @@
+[Unit]
+Description=Binance order notifier
+
+[Service]
+# Make sure that path to the file is correct
+ExecStart=/home/user/binance-order-notifier/app.js 
+Restart=always
+User=nobody
+# Note Debian/Ubuntu uses 'nogroup', RHEL/Fedora uses 'nobody'
+Group=nobody
+Environment=PATH=/usr/bin:/usr/local/bin
+Environment=NODE_ENV=production
+# Make sure that path to the file is correct
+WorkingDirectory=/home/user/binance-order-notifier/
+
+[Install]
+WantedBy=multi-user.target

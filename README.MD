@@ -1,7 +1,7 @@
 # Binance order notifier
 
 This small app notify you in Telegram when order placed, canceled or filled.
-Unfortunately official Binance App doesn't has this function.
+Unfortunately official Binance App don't have this function.
 
 ## Getting Started
 
