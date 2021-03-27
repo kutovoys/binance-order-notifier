@@ -46,16 +46,22 @@ function sendNotification(data, chatId) {
       status = 'CANCELED'
       sticker = '❌ ❌ ❌'
     } else if (data.executionType === 'TRADE') {
-      status = 'FILLED'
-      sticker = '💰 💰 💰'
+      if (data.quantity === data.lastTradeQuantity) {
+        status = 'FILLED'
+        sticker = '💰 💰 💰'
+      } else {
+        status = 'PARTIALLY FILLED'
+        sticker = '💰'
+        data.quantity = data.lastTradeQuantity
+      }
     }
+    data.quantity = String(Number(Number(data.quantity).toFixed(8)))
+    summ = data.price * data.quantity
+    summ = String(Number(Number(summ).toFixed(8)))
+    data.price = String(Number(data.price))
     slimbot.sendMessage(
       chatId,
-      `${sticker}\n${data.side} order *${status}:*\n*Pair:* ${
-        data.symbol
-      }\n*Price:* ${data.price}\n*Quantity:* ${data.quantity}\n*Summ:* ${
-        data.price * data.quantity
-      } `,
+      `${sticker}\n${data.side} order *${status}:*\n*Pair:*         ${data.symbol}\n*Price:*       ${data.price}\n*Quantity:* ${data.quantity}\n*Total:*        ${summ} `,
       optionalParams
     )
   }

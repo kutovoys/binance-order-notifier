@@ -3,3 +3,4 @@ test.js
 default.json
 data.js
 .vscode/settings.json
+.DS_Store
